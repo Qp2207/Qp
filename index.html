@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SportZone - Áo & Quần thể thao</title>
+  <title>SportZone - Tra cứu mã sản phẩm</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap');
@@ -204,6 +203,47 @@
 
     .nav-links a:hover::after {
       width: 100%;
+    }
+
+    .nav-search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-search input {
+      width: 170px;
+      padding: 9px 12px;
+      border: 1.5px solid rgba(26, 110, 245, 0.18);
+      border-radius: 999px;
+      outline: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: var(--dark);
+      background: var(--white);
+    }
+
+    .nav-search input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26, 110, 245, 0.08);
+    }
+
+    .nav-search button {
+      padding: 9px 16px;
+      border: none;
+      border-radius: 999px;
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav-search button:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
     }
 
     /* =========================
@@ -974,6 +1014,11 @@
       <li><a onclick="goPage('home')">Trang chủ</a></li>
       <li><a onclick="goPage('shop')">Sản phẩm</a></li>
     </ul>
+
+    <div class="nav-search">
+      <input id="search-code" type="text" placeholder="Nhập mã SP..." onkeydown="handleSearchEnter(event)" />
+      <button onclick="searchProductByCode()">Tìm</button>
+    </div>
   </nav>
 
   <!-- =========================
@@ -1038,7 +1083,6 @@
           <div class="category-bg">👕</div>
           <div class="category-overlay">
             <div class="category-name">ÁO THỂ THAO</div>
-            <div class="category-count">96 sản phẩm</div>
           </div>
         </div>
 
@@ -1046,7 +1090,6 @@
           <div class="category-bg">🩳</div>
           <div class="category-overlay">
             <div class="category-name">QUẦN THỂ THAO</div>
-            <div class="category-count">74 sản phẩm</div>
           </div>
         </div>
       </div>
@@ -1124,13 +1167,13 @@
 
           <div class="filter-options">
             <div id="filter-all" class="filter-option active" onclick="shopFilter('all')">
-              Tất cả <span class="filter-count">170</span>
+             Tất cả
             </div>
             <div id="filter-ao" class="filter-option" onclick="shopFilter('ao')">
-              Áo thể thao <span class="filter-count">96</span>
+             Áo thể thao
             </div>
             <div id="filter-quan" class="filter-option" onclick="shopFilter('quan')">
-              Quần thể thao <span class="filter-count">74</span>
+             Quần thể thao
             </div>
           </div>
         </div>
@@ -1143,7 +1186,7 @@
           <select id="sort-select" class="sort-select" onchange="renderShopProducts()">
             <option value="default">Mặc định</option>
             <option value="new">Mới nhất</option>
-            <option value="az">Tên A–Z</option>
+            <option value="az">Mã A–Z</option>
           </select>
         </div>
 
@@ -1176,6 +1219,7 @@
         category: 'ao',
         emoji: '👕',
         code: 'AO-001',
+        saleUrl: 'https://example.com/san-pham/ao-001',
         badge: null,
         colors: ['#1a6ef5', '#ffffff', '#0f172a', '#e07098'],
         features: ['Thấm hút mồ hôi', 'Chống tia UV', 'Nhanh khô', 'Khử mùi'],
@@ -1187,6 +1231,7 @@
         category: 'ao',
         emoji: '🎽',
         code: 'AO-002',
+        saleUrl: 'https://example.com/san-pham/ao-002',
         badge: 'Mới',
         colors: ['#0f172a', '#1a6ef5', '#f5a8c3'],
         features: ['Thoáng khí', 'Vải tái chế', 'Co giãn tốt', 'Phản quang'],
@@ -1198,6 +1243,7 @@
         category: 'ao',
         emoji: '🩱',
         code: 'AO-003',
+        saleUrl: 'https://example.com/san-pham/ao-003',
         badge: 'Mới',
         colors: ['#f5a8c3', '#1a6ef5', '#0f172a'],
         features: ['Siêu nhẹ', 'Form ôm', 'Thoáng mát', 'Chống thấm mồ hôi'],
@@ -1209,6 +1255,7 @@
         category: 'ao',
         emoji: '🧥',
         code: 'AO-004',
+        saleUrl: 'https://example.com/san-pham/ao-004',
         badge: null,
         colors: ['#0f172a', '#1a6ef5'],
         features: ['Lót nỉ', 'Túi trước', 'Có khóa kéo', 'Giữ nhiệt'],
@@ -1220,6 +1267,7 @@
         category: 'ao',
         emoji: '🥋',
         code: 'AO-005',
+        saleUrl: 'https://example.com/san-pham/ao-005',
         badge: 'Mới',
         colors: ['#ffffff', '#1a6ef5', '#0f172a'],
         features: ['Cổ kéo khóa', 'Thấm hút tốt', 'Tay áo tiện lợi', 'Form gọn'],
@@ -1231,6 +1279,7 @@
         category: 'ao',
         emoji: '👚',
         code: 'AO-006',
+        saleUrl: 'https://example.com/san-pham/ao-006',
         badge: 'Mới',
         colors: ['#e07098', '#ffffff', '#0f172a'],
         features: ['Co giãn', 'Dáng crop', 'Logo trước ngực', 'Vải mềm'],
@@ -1242,6 +1291,7 @@
         category: 'quan',
         emoji: '🩳',
         code: 'QU-001',
+        saleUrl: 'https://example.com/san-pham/qu-001',
         badge: null,
         colors: ['#0f172a', '#1a6ef5', '#e07098'],
         features: ['Nhanh khô', 'Túi hông', 'Lưng thun', 'Co giãn 4 chiều'],
@@ -1253,6 +1303,7 @@
         category: 'quan',
         emoji: '👖',
         code: 'QU-002',
+        saleUrl: 'https://example.com/san-pham/qu-002',
         badge: null,
         colors: ['#1a6ef5', '#0f172a'],
         features: ['Chắn gió', 'Chống nước nhẹ', 'Phản quang', 'Dáng ôm'],
@@ -1264,6 +1315,7 @@
         category: 'quan',
         emoji: '🧶',
         code: 'QU-003',
+        saleUrl: 'https://example.com/san-pham/qu-003',
         badge: 'Mới',
         colors: ['#0f172a', '#1a6ef5', '#f5a8c3'],
         features: ['Lưng cao', 'Ôm cơ', 'Có túi', 'Co giãn tốt'],
@@ -1275,6 +1327,7 @@
         category: 'quan',
         emoji: '🩱',
         code: 'QU-004',
+        saleUrl: 'https://example.com/san-pham/qu-004',
         badge: 'Mới',
         colors: ['#f5a8c3', '#1a6ef5', '#0f172a'],
         features: ['Ống bo', 'Túi khóa kéo', 'Dây rút', 'Vải nỉ mềm'],
@@ -1286,6 +1339,7 @@
         category: 'quan',
         emoji: '🩳',
         code: 'QU-005',
+        saleUrl: 'https://example.com/san-pham/qu-005',
         badge: null,
         colors: ['#1a6ef5', '#0f172a', '#ffffff'],
         features: ['Siêu nhẹ', 'Lớp lót trong', 'Nhanh khô', 'Dễ vận động'],
@@ -1297,6 +1351,7 @@
         category: 'quan',
         emoji: '🧤',
         code: 'QU-006',
+        saleUrl: 'https://example.com/san-pham/qu-006',
         badge: 'Mới',
         colors: ['#e07098', '#0f172a', '#1a6ef5'],
         features: ['Dài 7/8', 'Lưng cao', 'Co giãn', 'Chống xù vải'],
@@ -1311,14 +1366,13 @@
     ========================= */
     function renderProductCard(product) {
       return `
-        <article class="product-card fade-up" onclick="openDetail(${product.id})">
+        <article class="product-card fade-up" onclick="openProductLink(${product.id})">
           <div class="product-image">
             <span class="product-emoji">${product.emoji}</span>
             ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
           </div>
 
           <div class="product-body">
-            <h3 class="product-name">${product.name}</h3>
             <div class="product-code-row">
               <span class="code-label">Mã SP</span>
               <span class="code-value">${product.code}</span>
@@ -1345,7 +1399,7 @@
       }
 
       if (sortValue === 'az') {
-        list = [...list].sort((a, b) => a.name.localeCompare(b.name));
+        list = [...list].sort((a, b) => a.code.localeCompare(b.code));
       }
 
       document.getElementById('shop-products').innerHTML = list.map(renderProductCard).join('');
@@ -1382,74 +1436,38 @@
     }
 
     /* =========================
-       4. PRODUCT DETAIL
+       4. PRODUCT LINK & SEARCH
     ========================= */
-    function openDetail(productId) {
+    function openProductLink(productId) {
       const product = products.find(item => item.id === productId);
       if (!product) return;
 
-      document.getElementById('detail-content').innerHTML = `
-        <div class="detail-gallery fade-up">
-          <div class="gallery-main">
-            <span id="gallery-emoji">${product.emoji}</span>
-          </div>
-
-          <div class="gallery-thumbs">
-            ${[product.emoji, '👕', '🎽', '✨'].map((emoji, index) => `
-              <div class="thumb ${index === 0 ? 'active' : ''}" onclick="switchThumb(this, '${emoji}')">
-                ${emoji}
-              </div>
-            `).join('')}
-          </div>
-        </div>
-
-        <div class="detail-info fade-up delay-1">
-          <h1 class="detail-name">${product.name}</h1>
-
-          <div class="detail-code-box">
-            <span class="detail-code-label">Mã sản phẩm</span>
-            <span class="detail-code-value">${product.code}</span>
-          </div>
-
-          <div>
-            <div class="option-label">Màu sắc</div>
-            <div class="color-options">
-              ${product.colors.map((color, index) => `
-                <div
-                  class="color-dot ${index === 0 ? 'active' : ''}"
-                  style="background: ${color}; ${color === '#ffffff' ? 'border-color: #ddd;' : ''}"
-                  onclick="selectColor(this)"
-                ></div>
-              `).join('')}
-            </div>
-          </div>
-
-          <div class="features-grid">
-            ${product.features.map((feature, index) => `
-              <div class="feature-item">
-                <span class="feature-icon">${['⚡', '💨', '🛡️', '✨'][index % 4]}</span>
-                <div class="feature-text">
-                  <strong>${feature}</strong>
-                  <span>Công nghệ thể thao hiện đại</span>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-
-      goPage('detail');
+      window.location.href = product.saleUrl;
     }
 
-    function switchThumb(element, emoji) {
-      document.querySelectorAll('.thumb').forEach(thumb => thumb.classList.remove('active'));
-      element.classList.add('active');
-      document.getElementById('gallery-emoji').textContent = emoji;
+    function searchProductByCode() {
+      const input = document.getElementById('search-code');
+      const keyword = input.value.trim().toUpperCase();
+
+      if (!keyword) {
+        alert('Vui lòng nhập mã sản phẩm. Ví dụ: AO-001');
+        return;
+      }
+
+      const product = products.find(item => item.code.toUpperCase() === keyword);
+
+      if (!product) {
+        alert('Không tìm thấy sản phẩm có mã: ' + keyword);
+        return;
+      }
+
+      window.location.href = product.saleUrl;
     }
 
-    function selectColor(element) {
-      document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('active'));
-      element.classList.add('active');
+    function handleSearchEnter(event) {
+      if (event.key === 'Enter') {
+        searchProductByCode();
+      }
     }
 
     /* =========================
