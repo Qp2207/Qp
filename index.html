@@ -508,6 +508,13 @@
       overflow: hidden;
     }
 
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
     .product-emoji {
       transition: transform 0.3s ease;
     }
@@ -944,60 +951,304 @@
     .delay-4 { animation-delay: 0.4s; }
 
     /* =========================
-       11. RESPONSIVE
+       11. RESPONSIVE: TABLET + MOBILE
     ========================= */
-    @media (max-width: 768px) {
+
+    /* iPad / Tablet ngang và dọc */
+    @media (max-width: 1024px) {
+      nav {
+        height: auto;
+        min-height: 64px;
+        padding: 12px 5%;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .page {
+        padding-top: 92px;
+      }
+
+      .nav-logo {
+        font-size: 24px;
+      }
+
       .nav-links {
-        gap: 18px;
+        gap: 20px;
+      }
+
+      .nav-search {
+        width: 100%;
+        order: 3;
+      }
+
+      .nav-search input {
+        flex: 1;
+        width: auto;
       }
 
       .hero {
+        min-height: auto;
         grid-template-columns: 1fr;
+      }
+
+      .hero-left {
+        padding: 56px 6% 44px;
+      }
+
+      .hero-right {
+        min-height: 360px;
+      }
+
+      .hero-icon {
+        font-size: 130px;
+      }
+
+      .hero-badge {
+        right: 10%;
+        bottom: 16%;
+      }
+
+      .categories {
+        gap: 18px;
+      }
+
+      .category-card {
+        aspect-ratio: 4 / 3;
+      }
+
+      .category-name {
+        font-size: 34px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .shop-layout {
+        grid-template-columns: 1fr;
+        padding: 28px 6% 70px;
+      }
+
+      .filters {
+        position: static;
+      }
+
+      .filter-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .filter-option {
+        border: 1.5px solid rgba(26, 110, 245, 0.15);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Điện thoại */
+    @media (max-width: 640px) {
+      nav {
+        padding: 10px 5%;
+      }
+
+      .page {
+        padding-top: 122px;
+      }
+
+      .nav-logo {
+        width: 100%;
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .nav-search {
+        gap: 6px;
+      }
+
+      .nav-search input {
+        min-width: 0;
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .nav-search button {
+        padding: 10px 14px;
+        font-size: 12px;
+        white-space: nowrap;
+      }
+
+      .section {
+        padding: 54px 5%;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .section-title {
+        font-size: 42px;
+      }
+
+      .hero-left {
+        padding: 42px 5% 36px;
+      }
+
+      .hero-eyebrow {
+        margin-bottom: 18px;
+        font-size: 11px;
+      }
+
+      .hero-title {
+        font-size: 58px;
+      }
+
+      .hero-sub {
+        margin-bottom: 28px;
+        font-size: 14px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .stat-num {
+        font-size: 28px;
+      }
+
+      .stat-label {
+        font-size: 10px;
       }
 
       .hero-right {
         display: none;
       }
 
-      .hero-left {
-        padding: 48px 6%;
-      }
-
-      .hero-stats {
-        gap: 24px;
-        flex-wrap: wrap;
-      }
-
-      .section,
-      .shop-layout,
-      .detail-wrap {
-        padding-left: 6%;
-        padding-right: 6%;
-      }
-
       .categories {
         grid-template-columns: 1fr;
       }
 
-      .shop-layout,
-      .detail-wrap {
+      .category-card {
+        aspect-ratio: 16 / 10;
+        border-radius: 20px;
+      }
+
+      .category-bg {
+        font-size: 70px;
+      }
+
+      .category-overlay {
+        padding: 24px;
+      }
+
+      .category-name {
+        font-size: 34px;
+      }
+
+      .products-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
       }
 
-      .filters,
-      .detail-gallery {
-        position: static;
+      .product-card {
+        border-radius: 20px;
       }
 
-      .shop-header,
-      .section-header,
-      .footer-bottom {
+      .product-image {
+        font-size: 76px;
+      }
+
+      .product-body {
+        padding: 16px;
+      }
+
+      .shop-hero {
+        padding: 32px 5% 24px;
+      }
+
+      .shop-title {
+        font-size: 46px;
+      }
+
+      .shop-layout {
+        padding: 24px 5% 56px;
+      }
+
+      .shop-header {
         align-items: flex-start;
         flex-direction: column;
       }
 
+      .sort-select {
+        width: 100%;
+      }
+
+      .tag-row {
+        gap: 8px;
+        margin-bottom: 26px;
+      }
+
+      .tag {
+        padding: 8px 16px;
+        font-size: 12px;
+      }
+
       .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    /* Điện thoại rất nhỏ */
+    @media (max-width: 380px) {
+      .page {
+        padding-top: 128px;
+      }
+
+      .hero-title {
+        font-size: 50px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .category-name {
+        font-size: 30px;
       }
     }
   </style>
@@ -1042,7 +1293,21 @@
           <button class="btn-outline" onclick="goPage('shop')">Khám phá ngay</button>
         </div>
 
-              </div>
+        <div class="hero-stats fade-up delay-4">
+          <div class="stat">
+            <span class="stat-num">200+</span>
+            <span class="stat-label">Mẫu mã</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">50K+</span>
+            <span class="stat-label">Khách hàng</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">4.9★</span>
+            <span class="stat-label">Đánh giá</span>
+          </div>
+        </div>
+      </div>
 
       <div class="hero-right">
         <div class="hero-blob"></div>
@@ -1198,153 +1463,9 @@
     /* =========================
        1. PRODUCT DATA
     ========================= */
-    const products = [
-      {
-        id: 1,
-        name: 'FLEX TEE PRO',
-        category: 'ao',
-        emoji: '👕',
-        code: 'AO-001',
-        saleUrl: 'https://example.com/san-pham/ao-001',
-        badge: null,
-        colors: ['#1a6ef5', '#ffffff', '#0f172a', '#e07098'],
-        features: ['Thấm hút mồ hôi', 'Chống tia UV', 'Nhanh khô', 'Khử mùi'],
-        isNew: false
-      },
-      {
-        id: 2,
-        name: 'MESH TRAINING TOP',
-        category: 'ao',
-        emoji: '🎽',
-        code: 'AO-002',
-        saleUrl: 'https://example.com/san-pham/ao-002',
-        badge: null,
-        colors: ['#0f172a', '#1a6ef5', '#f5a8c3'],
-        features: ['Thoáng khí', 'Vải tái chế', 'Co giãn tốt', 'Phản quang'],
-        isNew: true
-      },
-      {
-        id: 3,
-        name: 'ZONE TANK LITE',
-        category: 'ao',
-        emoji: '🩱',
-        code: 'AO-003',
-        saleUrl: 'https://example.com/san-pham/ao-003',
-        badge: null,
-        colors: ['#f5a8c3', '#1a6ef5', '#0f172a'],
-        features: ['Siêu nhẹ', 'Form ôm', 'Thoáng mát', 'Chống thấm mồ hôi'],
-        isNew: true
-      },
-      {
-        id: 4,
-        name: 'HYPER HOODIE',
-        category: 'ao',
-        emoji: '🧥',
-        code: 'AO-004',
-        saleUrl: 'https://example.com/san-pham/ao-004',
-        badge: null,
-        colors: ['#0f172a', '#1a6ef5'],
-        features: ['Lót nỉ', 'Túi trước', 'Có khóa kéo', 'Giữ nhiệt'],
-        isNew: false
-      },
-      {
-        id: 5,
-        name: 'PERFORMANCE ZIP',
-        category: 'ao',
-        emoji: '🥋',
-        code: 'AO-005',
-        saleUrl: 'https://example.com/san-pham/ao-005',
-        badge: null,
-        colors: ['#ffffff', '#1a6ef5', '#0f172a'],
-        features: ['Cổ kéo khóa', 'Thấm hút tốt', 'Tay áo tiện lợi', 'Form gọn'],
-        isNew: true
-      },
-      {
-        id: 6,
-        name: 'SPORT CROP TOP',
-        category: 'ao',
-        emoji: '👚',
-        code: 'AO-006',
-        saleUrl: 'https://example.com/san-pham/ao-006',
-        badge: null,
-        colors: ['#e07098', '#ffffff', '#0f172a'],
-        features: ['Co giãn', 'Dáng crop', 'Logo trước ngực', 'Vải mềm'],
-        isNew: true
-      },
-      {
-        id: 7,
-        name: 'PRO SHORTS X',
-        category: 'quan',
-        emoji: '🩳',
-        code: 'QU-001',
-        saleUrl: 'https://example.com/san-pham/qu-001',
-        badge: null,
-        colors: ['#0f172a', '#1a6ef5', '#e07098'],
-        features: ['Nhanh khô', 'Túi hông', 'Lưng thun', 'Co giãn 4 chiều'],
-        isNew: false
-      },
-      {
-        id: 8,
-        name: 'ELITE TRACKSUIT',
-        category: 'quan',
-        emoji: '👖',
-        code: 'QU-002',
-        saleUrl: 'https://example.com/san-pham/qu-002',
-        badge: null,
-        colors: ['#1a6ef5', '#0f172a'],
-        features: ['Chắn gió', 'Chống nước nhẹ', 'Phản quang', 'Dáng ôm'],
-        isNew: false
-      },
-      {
-        id: 9,
-        name: 'TRAINING LEGGINGS',
-        category: 'quan',
-        emoji: '🧶',
-        code: 'QU-003',
-        saleUrl: 'https://example.com/san-pham/qu-003',
-        badge: null,
-        colors: ['#0f172a', '#1a6ef5', '#f5a8c3'],
-        features: ['Lưng cao', 'Ôm cơ', 'Có túi', 'Co giãn tốt'],
-        isNew: true
-      },
-      {
-        id: 10,
-        name: 'ZONE JOGGER PRO',
-        category: 'quan',
-        emoji: '🩱',
-        code: 'QU-004',
-        saleUrl: 'https://example.com/san-pham/qu-004',
-        badge: null,
-        colors: ['#f5a8c3', '#1a6ef5', '#0f172a'],
-        features: ['Ống bo', 'Túi khóa kéo', 'Dây rút', 'Vải nỉ mềm'],
-        isNew: true
-      },
-      {
-        id: 11,
-        name: 'SWIFT RUN SHORTS',
-        category: 'quan',
-        emoji: '🩳',
-        code: 'QU-005',
-        saleUrl: 'https://example.com/san-pham/qu-005',
-        badge: null,
-        colors: ['#1a6ef5', '#0f172a', '#ffffff'],
-        features: ['Siêu nhẹ', 'Lớp lót trong', 'Nhanh khô', 'Dễ vận động'],
-        isNew: false
-      },
-      {
-        id: 12,
-        name: 'POWER CAPRI',
-        category: 'quan',
-        emoji: '🧤',
-        code: 'QU-006',
-        saleUrl: 'https://example.com/san-pham/qu-006',
-        badge: null,
-        colors: ['#e07098', '#0f172a', '#1a6ef5'],
-        features: ['Dài 7/8', 'Lưng cao', 'Co giãn', 'Chống xù vải'],
-        isNew: true
-      }
-    ];
-
+  </script>
+  <script src="products.js"></script>
+  <script>
     let activeFilter = 'all';
     let activeSearchCode = '';
     const randomOptionProducts = [...products].sort(() => Math.random() - 0.5).slice(0, 8);
@@ -1356,7 +1477,7 @@
       return `
         <article class="product-card fade-up" onclick="openProductLink(${product.id})">
           <div class="product-image">
-            <span class="product-emoji">${product.emoji}</span>
+            <img src="${product.image}" alt="${product.code}" loading="lazy">
           </div>
 
           <div class="product-body">
