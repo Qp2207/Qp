@@ -1027,7 +1027,7 @@
   <main id="page-home" class="page active">
     <section class="hero">
       <div class="hero-left">
-        <span class="hero-eyebrow fade-up">⚡ Bộ sưu tập mới 2025</span>
+        <span class="hero-eyebrow fade-up">⚡ Bộ sưu tập 2025</span>
 
         <h1 class="hero-title fade-up delay-1">
           KHÔNG<br />GIỚI<br /><span>HẠN</span>
@@ -1063,7 +1063,7 @@
         <div class="hero-blob-2"></div>
         <div class="hero-icon">👕</div>
         <div class="hero-badge">
-          <div class="badge-label">Mới nhất</div>
+          <div class="badge-label">SportZone</div>
           <div class="badge-value">2025</div>
         </div>
       </div>
@@ -1082,14 +1082,14 @@
         <div class="category-card category-shirt" onclick="goShopFilter('ao')">
           <div class="category-bg">👕</div>
           <div class="category-overlay">
-            <div class="category-name">ÁO THỂ THAO</div>
+            <div class="category-name">ÁO</div>
           </div>
         </div>
 
         <div class="category-card category-pants" onclick="goShopFilter('quan')">
           <div class="category-bg">🩳</div>
           <div class="category-overlay">
-            <div class="category-name">QUẦN THỂ THAO</div>
+            <div class="category-name">QUẦN</div>
           </div>
         </div>
       </div>
@@ -1098,8 +1098,8 @@
     <section class="section" style="padding-top: 0;">
       <div class="section-header">
         <div>
-          <div class="section-label">Mới về</div>
-          <h2 class="section-title">MỚI NHẤT</h2>
+          <div class="section-label">Tùy chọn</div>
+          <h2 class="section-title">TÙY CHỌN</h2>
         </div>
         <a class="section-link" onclick="goPage('shop')">Xem tất cả →</a>
       </div>
@@ -1119,9 +1119,9 @@
         <div class="footer-col">
           <h4>Sản phẩm</h4>
           <ul>
-            <li>Áo thể thao</li>
-            <li>Quần thể thao</li>
-            <li>Mới về</li>
+            <li>Áo</li>
+            <li>Quần</li>
+            <li>Tùy chọn</li>
           </ul>
         </div>
 
@@ -1170,10 +1170,10 @@
              Tất cả
             </div>
             <div id="filter-ao" class="filter-option" onclick="shopFilter('ao')">
-             Áo thể thao
+             Áo
             </div>
             <div id="filter-quan" class="filter-option" onclick="shopFilter('quan')">
-             Quần thể thao
+             Quần
             </div>
           </div>
         </div>
@@ -1185,7 +1185,7 @@
 
           <select id="sort-select" class="sort-select" onchange="renderShopProducts()">
             <option value="default">Mặc định</option>
-            <option value="new">Mới nhất</option>
+            <option value="random">Tùy chọn</option>
             <option value="az">Mã A–Z</option>
           </select>
         </div>
@@ -1232,7 +1232,7 @@
         emoji: '🎽',
         code: 'AO-002',
         saleUrl: 'https://example.com/san-pham/ao-002',
-        badge: 'Mới',
+        badge: null,
         colors: ['#0f172a', '#1a6ef5', '#f5a8c3'],
         features: ['Thoáng khí', 'Vải tái chế', 'Co giãn tốt', 'Phản quang'],
         isNew: true
@@ -1244,7 +1244,7 @@
         emoji: '🩱',
         code: 'AO-003',
         saleUrl: 'https://example.com/san-pham/ao-003',
-        badge: 'Mới',
+        badge: null,
         colors: ['#f5a8c3', '#1a6ef5', '#0f172a'],
         features: ['Siêu nhẹ', 'Form ôm', 'Thoáng mát', 'Chống thấm mồ hôi'],
         isNew: true
@@ -1268,7 +1268,7 @@
         emoji: '🥋',
         code: 'AO-005',
         saleUrl: 'https://example.com/san-pham/ao-005',
-        badge: 'Mới',
+        badge: null,
         colors: ['#ffffff', '#1a6ef5', '#0f172a'],
         features: ['Cổ kéo khóa', 'Thấm hút tốt', 'Tay áo tiện lợi', 'Form gọn'],
         isNew: true
@@ -1280,7 +1280,7 @@
         emoji: '👚',
         code: 'AO-006',
         saleUrl: 'https://example.com/san-pham/ao-006',
-        badge: 'Mới',
+        badge: null,
         colors: ['#e07098', '#ffffff', '#0f172a'],
         features: ['Co giãn', 'Dáng crop', 'Logo trước ngực', 'Vải mềm'],
         isNew: true
@@ -1316,7 +1316,7 @@
         emoji: '🧶',
         code: 'QU-003',
         saleUrl: 'https://example.com/san-pham/qu-003',
-        badge: 'Mới',
+        badge: null,
         colors: ['#0f172a', '#1a6ef5', '#f5a8c3'],
         features: ['Lưng cao', 'Ôm cơ', 'Có túi', 'Co giãn tốt'],
         isNew: true
@@ -1328,7 +1328,7 @@
         emoji: '🩱',
         code: 'QU-004',
         saleUrl: 'https://example.com/san-pham/qu-004',
-        badge: 'Mới',
+        badge: null,
         colors: ['#f5a8c3', '#1a6ef5', '#0f172a'],
         features: ['Ống bo', 'Túi khóa kéo', 'Dây rút', 'Vải nỉ mềm'],
         isNew: true
@@ -1352,7 +1352,7 @@
         emoji: '🧤',
         code: 'QU-006',
         saleUrl: 'https://example.com/san-pham/qu-006',
-        badge: 'Mới',
+        badge: null,
         colors: ['#e07098', '#0f172a', '#1a6ef5'],
         features: ['Dài 7/8', 'Lưng cao', 'Co giãn', 'Chống xù vải'],
         isNew: true
@@ -1360,6 +1360,8 @@
     ];
 
     let activeFilter = 'all';
+    let activeSearchCode = '';
+    const randomOptionProducts = [...products].sort(() => Math.random() - 0.5).slice(0, 8);
 
     /* =========================
        2. RENDER PRODUCTS
@@ -1369,7 +1371,6 @@
         <article class="product-card fade-up" onclick="openProductLink(${product.id})">
           <div class="product-image">
             <span class="product-emoji">${product.emoji}</span>
-            ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
           </div>
 
           <div class="product-body">
@@ -1383,19 +1384,20 @@
     }
 
     function renderNewProducts() {
-      const newProducts = products.filter(product => product.isNew).slice(0, 8);
-      document.getElementById('new-products').innerHTML = newProducts.map(renderProductCard).join('');
+      document.getElementById('new-products').innerHTML = randomOptionProducts.map(renderProductCard).join('');
     }
 
     function renderShopProducts() {
       const sortValue = document.getElementById('sort-select')?.value || 'default';
 
       let list = products.filter(product => {
-        return activeFilter === 'all' || product.category === activeFilter;
+        const categoryOk = activeFilter === 'all' || product.category === activeFilter;
+        const searchOk = !activeSearchCode || product.code.toUpperCase() === activeSearchCode;
+        return categoryOk && searchOk;
       });
 
-      if (sortValue === 'new') {
-        list = [...list].sort((a, b) => Number(b.isNew) - Number(a.isNew));
+      if (sortValue === 'random') {
+        list = [...list].sort(() => Math.random() - 0.5).slice(0, 8);
       }
 
       if (sortValue === 'az') {
@@ -1403,7 +1405,9 @@
       }
 
       document.getElementById('shop-products').innerHTML = list.map(renderProductCard).join('');
-      document.getElementById('shop-count').textContent = `Hiển thị ${list.length} sản phẩm`;
+      document.getElementById('shop-count').textContent = activeSearchCode
+        ? `Kết quả tìm kiếm: ${activeSearchCode}`
+        : `Hiển thị ${list.length} sản phẩm`;
     }
 
     /* =========================
@@ -1411,6 +1415,9 @@
     ========================= */
     function shopFilter(category, tagElement) {
       activeFilter = category;
+      activeSearchCode = '';
+      const searchInput = document.getElementById('search-code');
+      if (searchInput) searchInput.value = '';
 
       document.querySelectorAll('.filter-option').forEach(option => {
         option.classList.remove('active');
@@ -1461,7 +1468,10 @@
         return;
       }
 
-      window.location.href = product.saleUrl;
+      activeSearchCode = product.code.toUpperCase();
+      activeFilter = 'all';
+      goPage('shop');
+      renderShopProducts();
     }
 
     function handleSearchEnter(event) {
