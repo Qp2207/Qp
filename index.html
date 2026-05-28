@@ -1498,7 +1498,7 @@
       const sortValue = document.getElementById('sort-select')?.value || 'default';
 
       let list = products.filter(product => {
-        const categoryOk = activeFilter === 'all' || product.category === activeFilter;
+        const categoryOk = activeFilter === 'all' || product.cat === activeFilter;
         const searchOk = !activeSearchCode || product.code.toUpperCase() === activeSearchCode;
         return categoryOk && searchOk;
       });
@@ -1556,7 +1556,7 @@
       const product = products.find(item => item.id === productId);
       if (!product) return;
 
-      window.location.href = product.saleUrl;
+      window.location.href = product.link;
     }
 
     function searchProductByCode() {
