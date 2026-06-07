@@ -48,9 +48,9 @@ const products = [
   cat: 'ao'
 },
 {
-  id: 7,
-  code: 'AO-007',
-  image: 'images/AO-007.jpg',
+  id: 8,
+  code: 'AO-008',
+  image: 'images/AO-008.jpg',
   link: 'https://vt.tiktok.com/ZS92nJaQsyS3m-ygXcY/',
   cat: 'ao'
 }
