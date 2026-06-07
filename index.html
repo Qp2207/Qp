@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SportZone - Tra cứu mã sản phẩm</title>
+  <title>Tra cứu mã sản phẩm</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap');
@@ -75,6 +75,11 @@
       align-items: flex-end;
       gap: 20px;
       margin-bottom: 48px;
+    }
+
+    .section-header.no-title {
+      justify-content: flex-end;
+      margin-bottom: 20px;
     }
 
     .section-label {
@@ -250,9 +255,8 @@
        4. HERO
     ========================= */
     .hero {
-      min-height: calc(100vh - 64px);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      min-height: 180px;
+      display: block;
       overflow: hidden;
     }
 
@@ -260,9 +264,10 @@
       position: relative;
       z-index: 2;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      padding: 60px 5% 60px 8%;
+      padding: 28px 5%;
+      min-height: 180px;
       background: var(--white);
     }
 
@@ -307,6 +312,7 @@
       gap: 16px;
       flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
     }
 
     .hero-stats {
@@ -992,7 +998,8 @@
       }
 
       .hero-left {
-        padding: 56px 6% 44px;
+        padding: 26px 6%;
+        min-height: 160px;
       }
 
       .hero-right {
@@ -1106,7 +1113,8 @@
       }
 
       .hero-left {
-        padding: 42px 5% 36px;
+        padding: 22px 5%;
+        min-height: 140px;
       }
 
       .hero-eyebrow {
@@ -1281,18 +1289,11 @@
           <button class="btn-primary" onclick="goPage('shop')">Xem sản phẩm →</button>
           <button class="btn-outline" onclick="goPage('shop')">Khám phá ngay</button>
         </div>
-
-        <div class="hero-stats fade-up delay-4">
-          
-        </div>
+      </div>
     </section>
 
     <section class="section">
-      <div class="section-header">
-        <div>
-          <div class="section-label">Danh mục</div>
-          <h2 class="section-title">KHÁM PHÁ</h2>
-        </div>
+      <div class="section-header no-title">
         <a class="section-link" onclick="goPage('shop')">Tất cả →</a>
       </div>
 
@@ -1300,7 +1301,7 @@
         <div class="category-card category-shirt" onclick="goShopFilter('ao')">
           <div class="category-bg"></div>
           <div class="category-overlay">
-            <div class="category-name">ÁO</div>
+            <div class="category-name">ÁO & VÁY</div>
           </div>
         </div>
 
@@ -1332,7 +1333,7 @@
   <main id="page-shop" class="page">
     <section class="shop-hero">
       <div class="section-label">Cửa hàng</div>
-      <h1 class="shop-title">ÁO & QUẦN</h1>
+      <h1 class="shop-title">ÁO & VÁY</h1>
     </section>
 
     <section class="shop-layout">
@@ -1345,7 +1346,7 @@
              Tất cả
             </div>
             <div id="filter-ao" class="filter-option" onclick="shopFilter('ao')">
-             Áo
+             Áo & Váy
             </div>
             <div id="filter-quan" class="filter-option" onclick="shopFilter('quan')">
              Quần
@@ -1367,7 +1368,7 @@
 
         <div class="tag-row">
           <button class="tag active" onclick="shopFilter('all', this)">Tất cả</button>
-          <button class="tag" onclick="shopFilter('ao', this)">Áo</button>
+          <button class="tag" onclick="shopFilter('ao', this)">Áo & Váy</button>
           <button class="tag" onclick="shopFilter('quan', this)">Quần</button>
         </div>
 
