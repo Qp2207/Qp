@@ -13,6 +13,13 @@ const products = [
   image: 'images/AV002.jpg',
   link: 'https://vt.tiktok.com/ZS92nJaQsyS3m-ygXcY/',
   cat: 'ao'
+},
+{
+  id: 3,
+  code: 'AV003',
+  image: 'images/AV003.jpg',
+  link: 'https://vt.tiktok.com/ZS92nn2g34k4o-CXlCL/',
+  cat: 'ao'
 }
 
 ];
