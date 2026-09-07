@@ -4,7 +4,7 @@
 // Sau khi đưa words.json lên GitHub, thay URL dưới đây bằng:
 // https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/words.json
 const GITHUB_DATA_URL =
-  "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/words.json";
+  "https://raw.githubusercontent.com/qp2207/Qp/main/words.json";
 
 let lessons = [];
 let selectedLesson = null;
