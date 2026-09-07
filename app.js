@@ -1,10 +1,8 @@
 // =============================
 // CẤU HÌNH GITHUB
 // =============================
-// Sau khi đưa words.json lên GitHub, thay URL dưới đây bằng:
-// https://raw.githubusercontent.com/USERNAME/REPOSITORY/main/words.json
 const GITHUB_DATA_URL =
-  "https://raw.githubusercontent.com/Qp2207/Qp/refs/heads/main/words.json";
+  "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/words.json";
 
 let lessons = [];
 let selectedLesson = null;
@@ -38,46 +36,115 @@ async function loadWords() {
   }
 }
 
+// Render dạng nhánh cây/accordion
 function renderLessons() {
   const box = $("lessonList");
   box.innerHTML = "";
 
   lessons.forEach((lesson, index) => {
-    const btn = document.createElement("button");
-    btn.className = "lesson";
-    btn.innerHTML = `
-      <strong>${escapeHtml(lesson.title)}</strong>
-      <span>${lesson.words.length} từ</span>
+    const card = document.createElement("div");
+    card.className = "lesson-card";
+
+    card.innerHTML = `
+      <div class="lesson-header" onclick="toggleLesson(${index})">
+        <div>
+          <strong>${escapeHtml(lesson.title)}</strong>
+          <span class="word-count">${lesson.words.length} từ vựng</span>
+        </div>
+        <span class="arrow-icon" id="arrow-${index}">▼</span>
+      </div>
+      
+      <div class="lesson-suboptions hidden" id="suboptions-${index}">
+        <button class="sub-btn view-btn" onclick="openWordList(${index})">
+          📖 Xem danh sách từ vựng
+        </button>
+        <div class="quiz-options">
+          <p class="sub-title">Luyện tập:</p>
+          <div class="sub-mode-grid">
+            <button class="sub-btn mode-btn" onclick="startQuiz(${index}, 'meaning-to-word')">
+              Nghĩa → Từ tiếng Anh
+            </button>
+            <button class="sub-btn mode-btn" onclick="startQuiz(${index}, 'word-to-meaning')">
+              Từ tiếng Anh → Nghĩa
+            </button>
+          </div>
+          <div class="quiz-configs">
+            <label>
+              <input type="checkbox" id="random-${index}"> Random câu hỏi
+            </label>
+            <label>
+              Số câu:
+              <select id="count-${index}">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="all">Tất cả</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
     `;
-    btn.onclick = () => {
-      document.querySelectorAll(".lesson").forEach(x => x.classList.remove("selected"));
-      btn.classList.add("selected");
-      selectedLesson = index;
-    };
-    box.appendChild(btn);
+    box.appendChild(card);
   });
 }
 
-document.querySelectorAll(".mode-card").forEach(btn => {
-  btn.onclick = () => {
-    document.querySelectorAll(".mode-card").forEach(x => x.classList.remove("selected"));
-    btn.classList.add("selected");
-    selectedMode = btn.dataset.mode;
-  };
-});
+// Bật/tắt nhánh con của từng bài học
+function toggleLesson(index) {
+  const sub = $(`suboptions-${index}`);
+  const arrow = $(`arrow-${index}`);
+  
+  const isHidden = sub.classList.contains("hidden");
+  
+  // Đóng tất cả các nhánh khác
+  document.querySelectorAll(".lesson-suboptions").forEach(el => el.classList.add("hidden"));
+  document.querySelectorAll(".arrow-icon").forEach(el => el.textContent = "▼");
 
-$("reloadBtn").onclick = loadWords;
+  // Mở nhánh được chọn nếu đang đóng
+  if (isHidden) {
+    sub.classList.remove("hidden");
+    arrow.textContent = "▲";
+  }
+}
 
-$("startBtn").onclick = () => {
-  if (selectedLesson === null) return alert("Hãy chọn bài học.");
-  if (!selectedMode) return alert("Hãy chọn chức năng.");
+// Chức năng: Xem từ vựng của bài học
+function openWordList(index) {
+  const lesson = lessons[index];
+  $("viewLessonTitle").textContent = lesson.title;
+  
+  const tbody = $("wordsTableBody");
+  tbody.innerHTML = "";
+
+  lesson.words.forEach((item, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${i + 1}</td>
+      <td><strong>${escapeHtml(item.word)}</strong></td>
+      <td>${escapeHtml(item.meaning)}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  $("setup").classList.add("hidden");
+  $("viewWords").classList.remove("hidden");
+}
+
+$("backFromViewBtn").onclick = () => {
+  $("viewWords").classList.add("hidden");
+  $("setup").classList.remove("hidden");
+};
+
+// Chức năng: Bắt đầu làm bài tập
+function startQuiz(lessonIndex, mode) {
+  selectedLesson = lessonIndex;
+  selectedMode = mode;
 
   const source = [...lessons[selectedLesson].words];
-  const random = $("randomMode").checked;
+  const isRandom = $(`random-${lessonIndex}`).checked;
 
-  if (random) shuffle(source);
+  if (isRandom) shuffle(source);
 
-  const countValue = $("questionCount").value;
+  const countValue = $(`count-${lessonIndex}`).value;
   const count = countValue === "all" ? source.length : Number(countValue);
 
   questions = source.slice(0, Math.min(count, source.length));
@@ -92,7 +159,7 @@ $("startBtn").onclick = () => {
   $("result").classList.add("hidden");
   $("quiz").classList.remove("hidden");
   showQuestion();
-};
+}
 
 $("answerForm").onsubmit = e => {
   e.preventDefault();
@@ -213,4 +280,5 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+$("reloadBtn").onclick = loadWords;
 loadWords();
