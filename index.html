@@ -17,38 +17,42 @@
     </header>
 
     <main>
-      <!-- MÀN HÌNH CHỌN BÀI HỌC VÀ CHỨC NĂNG -->
       <section id="setup" class="card">
-        <h2>Danh sách bài học</h2>
-        <p class="guide-text">Chọn một bài học để xem tùy chọn chức năng:</p>
-        
-        <!-- Danh sách bài học sẽ render ở đây dưới dạng các nhánh con -->
-        <div id="lessonList" class="lesson-accordion"></div>
+        <h2>Chọn bài học</h2>
+        <div id="lessonList" class="lesson-grid"></div>
 
+        <h2 class="mode-title">Chọn chức năng</h2>
+        <div class="mode-grid">
+          <button class="mode-card" data-mode="meaning-to-word">
+            <strong>Nghĩa → Từ tiếng Anh</strong>
+            <span>Trang đưa ra nghĩa, bạn nhập từ tiếng Anh.</span>
+          </button>
+          <button class="mode-card" data-mode="word-to-meaning">
+            <strong>Từ tiếng Anh → Nghĩa</strong>
+            <span>Trang đưa ra từ tiếng Anh, bạn nhập nghĩa.</span>
+          </button>
+        </div>
+
+        <div class="random-row">
+          <label>
+            <input type="checkbox" id="randomMode">
+            Random từ trong bài
+          </label>
+          <label>
+            Số câu:
+            <select id="questionCount">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+              <option value="all">Tất cả</option>
+            </select>
+          </label>
+        </div>
+
+        <button id="startBtn" class="primary start-btn">Bắt đầu</button>
         <p id="status" class="status"></p>
       </section>
 
-      <!-- MÀN HÌNH XEM TỪ VỰNG TRONG BÀI -->
-      <section id="viewWords" class="card hidden">
-        <div class="quiz-head">
-          <button id="backFromViewBtn" class="secondary">← Quay lại</button>
-          <h2 id="viewLessonTitle" style="margin:0;">Tên bài học</h2>
-        </div>
-        <div class="words-table-container">
-          <table class="words-table">
-            <thead>
-              <tr>
-                <th>STT</th>
-                <th>Từ tiếng Anh</th>
-                <th>Nghĩa tiếng Việt</th>
-              </tr>
-            </thead>
-            <tbody id="wordsTableBody"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- MÀN HÌNH LÀM BÀI TẬP (QUIZ) -->
       <section id="quiz" class="card hidden">
         <div class="quiz-head">
           <button id="backBtn" class="secondary">← Chọn lại</button>
@@ -69,7 +73,6 @@
         <button id="nextBtn" class="primary hidden">Câu tiếp theo →</button>
       </section>
 
-      <!-- MÀN HÌNH KẾT QUẢ -->
       <section id="result" class="card hidden">
         <h2>Hoàn thành!</h2>
         <div id="scoreCircle" class="score-circle"></div>
