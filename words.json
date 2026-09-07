@@ -1,54 +1,242 @@
 {
   "lessons": [
     {
-      "title": "Bài 1",
-      "words": [
-        {
-          "word": "apple",
-          "meaning": "quả táo"
-        },
-        {
-          "word": "book",
-          "meaning": "quyển sách"
-        },
-        {
-          "word": "computer",
-          "meaning": "máy tính"
-        },
-        {
-          "word": "student",
-          "meaning": "sinh viên"
-        },
-        {
-          "word": "school",
-          "meaning": "trường học"
-        }
-      ]
+  "title": "Bài 1",
+  "words": [
+    {
+      "word": "man",
+      "meaning": "người đàn ông"
     },
     {
-      "title": "Bài 2",
-      "words": [
-        {
-          "word": "security",
-          "meaning": "bảo mật"
-        },
-        {
-          "word": "network",
-          "meaning": "mạng"
-        },
-        {
-          "word": "password",
-          "meaning": "mật khẩu"
-        },
-        {
-          "word": "encryption",
-          "meaning": "mã hóa"
-        },
-        {
-          "word": "attack",
-          "meaning": "tấn công"
-        }
-      ]
+      "word": "woman",
+      "meaning": "người phụ nữ"
+    },
+    {
+      "word": "father",
+      "meaning": "bố"
+    },
+    {
+      "word": "mother",
+      "meaning": "mẹ"
+    },
+    {
+      "word": "teacher",
+      "meaning": "giáo viên"
+    },
+    {
+      "word": "student",
+      "meaning": "học sinh"
+    },
+    {
+      "word": "brother",
+      "meaning": "anh trai/ em trai"
+    },
+    {
+      "word": "sister",
+      "meaning": "chị gái/ em gái"
+    },
+    {
+      "word": "baby",
+      "meaning": "đứa bé"
+    },
+    {
+      "word": "child",
+      "meaning": "đứa trẻ"
+    },
+    {
+      "word": "dog",
+      "meaning": "chó"
+    },
+    {
+      "word": "cat",
+      "meaning": "mèo"
+    },
+    {
+      "word": "book",
+      "meaning": "sách"
+    },
+    {
+      "word": "car",
+      "meaning": "ô tô"
+    },
+    {
+      "word": "orange",
+      "meaning": "quả cam"
+    },
+    {
+      "word": "apple",
+      "meaning": "quả táo"
+    },
+    {
+      "word": "tall",
+      "meaning": "cao"
+    },
+    {
+      "word": "short",
+      "meaning": "thấp"
+    },
+    {
+      "word": "big",
+      "meaning": "lớn"
+    },
+    {
+      "word": "small",
+      "meaning": "nhỏ"
+    },
+    {
+      "word": "happy",
+      "meaning": "hạnh phúc, vui vẻ"
+    },
+    {
+      "word": "sad",
+      "meaning": "buồn"
     }
+  ]
+},{
+  "title": "Bài 2",
+  "words": [
+    {
+      "word": "uncle",
+      "meaning": "chú, bác"
+    },
+    {
+      "word": "aunt",
+      "meaning": "dì, cô"
+    },
+    {
+      "word": "parent",
+      "meaning": "bố/ mẹ"
+    },
+    {
+      "word": "children",
+      "meaning": "con cái, trẻ em"
+    },
+    {
+      "word": "room",
+      "meaning": "phòng"
+    },
+    {
+      "word": "kitchen",
+      "meaning": "bếp"
+    },
+    {
+      "word": "daughter",
+      "meaning": "con gái"
+    },
+    {
+      "word": "son",
+      "meaning": "con trai"
+    },
+    {
+      "word": "picture",
+      "meaning": "bức tranh"
+    },
+    {
+      "word": "box",
+      "meaning": "cái hộp"
+    },
+    {
+      "word": "doctor",
+      "meaning": "bác sĩ"
+    },
+    {
+      "word": "lawyer",
+      "meaning": "luật sư"
+    },
+    {
+      "word": "firefighter",
+      "meaning": "lính cứu hoả"
+    },
+    {
+      "word": "friend",
+      "meaning": "người bạn"
+    },
+    {
+      "word": "lovely",
+      "meaning": "đáng yêu, đẹp"
+    },
+    {
+      "word": "late",
+      "meaning": "muộn"
+    },
+    {
+      "word": "busy",
+      "meaning": "bận rộn"
+    },
+    {
+      "word": "kind",
+      "meaning": "tốt bụng"
+    },
+    {
+      "word": "new",
+      "meaning": "mới"
+    },
+    {
+      "word": "old",
+      "meaning": "cũ"
+    }
+  ]
+},
+    {
+  "title": "Bài 3",
+  "words": [
+    {
+      "word": "grandfather",
+      "meaning": "ông"
+    },
+    {
+      "word": "grandmother",
+      "meaning": "bà"
+    },
+    {
+      "word": "cousin",
+      "meaning": "anh/chị/em họ"
+    },
+    {
+      "word": "classmate",
+      "meaning": "bạn cùng lớp"
+    },
+    {
+      "word": "banana",
+      "meaning": "quả chuối"
+    },
+    {
+      "word": "cake",
+      "meaning": "bánh"
+    },
+    {
+      "word": "bag",
+      "meaning": "cái túi, cái cặp"
+    },
+    {
+      "word": "desk",
+      "meaning": "cái bàn"
+    },
+    {
+      "word": "chair",
+      "meaning": "cái ghế"
+    },
+    {
+      "word": "shirt",
+      "meaning": "áo sơ mi"
+    },
+    {
+      "word": "hat",
+      "meaning": "cái mũ"
+    },
+    {
+      "word": "jeans",
+      "meaning": "quần bò"
+    },
+    {
+      "word": "pillow",
+      "meaning": "cái gối"
+    },
+    {
+      "word": "sock",
+      "meaning": "cái tất"
+    }
+  ]
+}
   ]
 }
