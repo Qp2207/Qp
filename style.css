@@ -94,3 +94,52 @@ footer { text-align:center; color:#9ca3af; padding:25px; font-size:13px; }
   #answerForm { flex-direction:column; }
   .result-stats { gap:25px; }
 }
+/* Styling cấu trúc Nhánh con (Accordion) */
+.guide-text { color: #6b7280; margin-bottom: 16px; }
+.lesson-accordion { display: flex; flex-direction: column; gap: 12px; }
+.lesson-card {
+  border: 2px solid #e5e7eb; border-radius: 12px;
+  overflow: hidden; background: white;
+}
+.lesson-header {
+  padding: 16px 20px; display: flex; justify-content: space-between;
+  align-items: center; cursor: pointer; background: #fff;
+  transition: background 0.2s;
+}
+.lesson-header:hover { background: #f9fafb; }
+.lesson-header strong { font-size: 18px; display: block; }
+.word-count { font-size: 14px; color: #6b7280; }
+.arrow-icon { color: #6b7280; font-size: 12px; }
+
+/* Phần nội dung mở rộng của bài học */
+.lesson-suboptions {
+  padding: 16px 20px; background: #f8fafc; border-top: 1px solid #e5e7eb;
+}
+.sub-btn {
+  font: inherit; border-radius: 8px; cursor: pointer; padding: 10px 14px;
+}
+.view-btn {
+  width: 100%; background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe;
+  font-weight: bold; margin-bottom: 16px; text-align: center;
+}
+.view-btn:hover { background: #c7d2fe; }
+
+.sub-title { margin: 0 0 8px; font-weight: bold; font-size: 14px; color: #4b5563; }
+.sub-mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.mode-btn {
+  background: white; border: 1px solid #d1d5db; color: #111827; text-align: center;
+}
+.mode-btn:hover { background: #111827; color: white; border-color: #111827; }
+.quiz-configs { display: flex; gap: 16px; align-items: center; font-size: 14px; color: #4b5563; }
+
+/* Bảng danh sách từ vựng */
+.words-table-container { margin-top: 20px; overflow-x: auto; }
+.words-table { width: 100%; border-collapse: collapse; text-align: left; }
+.words-table th, .words-table td { padding: 12px 16px; border-bottom: 1px solid #e5e7eb; }
+.words-table th { background: #f3f4f6; color: #374151; }
+.words-table tr:hover { background: #f9fafb; }
+
+@media (max-width: 600px) {
+  .sub-mode-grid { grid-template-columns: 1fr; }
+  .quiz-configs { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
