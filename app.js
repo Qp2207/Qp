@@ -176,8 +176,21 @@ function nextQuestion() {
 // =============================
 // ENTER 2 LẦN
 // =============================
-$("answerForm").onsubmit = e => {
+// =============================
+// XỬ LÝ PHÍM ENTER
+// =============================
+$("answerForm").addEventListener("submit", e => {
   e.preventDefault();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key !== "Enter") return;
+
+  // Chỉ xử lý khi đang ở màn hình làm bài
+  if ($("quiz").classList.contains("hidden")) return;
+
+  e.preventDefault();
+  e.stopPropagation();
 
   if (!answered) {
     // Enter lần 1: Kiểm tra đáp án
@@ -186,7 +199,7 @@ $("answerForm").onsubmit = e => {
     // Enter lần 2: Chuyển câu
     nextQuestion();
   }
-};
+}, true);
 
 $("nextBtn").onclick = nextQuestion;
 
